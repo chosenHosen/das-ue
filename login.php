@@ -3,7 +3,7 @@ function onSignIn(googleUser) {
     console.log("Sucess!");
   var id_token = googleUser.getAuthResponse().id_token;
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'https://localhost/Dasue2/verifyGoogle.php');
+    xhr.open('POST', 'https://localhost/das-ue/verifyGoogle.php');
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.onload = function() {
       location.reload();
@@ -42,10 +42,22 @@ function onSignIn(googleUser) {
                                     <div class="row">
                                         <div class="col-sm-6 col-sm-offset-3">
                                             <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In">
-                                            <div class="text-center btn btn-login">
-                                                <div class="g-signin2" data-onsuccess="onSignIn"></div>
-                                            </div>
                                         </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <hr>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row" style="text-align: center">
+                                        <div class="g-signin2" data-onsuccess="onSignIn" style="display: inline-block"></div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <a href="http_digest.php?redirect"><button style="margin: 0 auto; display: block;">Login via HTTP Digest</button></a>
                                     </div>
                                 </div>
                             </form>
@@ -54,9 +66,5 @@ function onSignIn(googleUser) {
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="row">
-        <a href="http_digest.php?redirect"><button style="margin: 0 auto; display: block;">Login via HTTP Digest</button></a>
     </div>
 </div>
