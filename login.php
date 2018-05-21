@@ -1,12 +1,12 @@
 <script>
 function onSignIn(googleUser) {
-    console.log("Sucess!");
+    console.log("Success!");
   var id_token = googleUser.getAuthResponse().id_token;
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'https://localhost/Dasue2/verifyGoogle.php');
+    xhr.open('POST', 'https://localhost/Dasue2_git/das-ue/verifyGoogle.php');
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.onload = function() {
-      location.reload();
+        location.reload();
     };
 
     var remember = "off";
@@ -19,7 +19,6 @@ function onSignIn(googleUser) {
 }
 </script>
 
-<script src="https://apis.google.com/js/platform.js" async defer></script>
 <div class="container">
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
