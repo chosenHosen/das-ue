@@ -20,6 +20,8 @@ if(isset($_COOKIE["auth"]) && isset($_SESSION["auth"]) && $_COOKIE["auth"] === $
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <meta name="google-signin-client_id" content="280359176332-30opuubdvu7gb7pjhq2nulkns0h5d5hd.apps.googleusercontent.com">
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
