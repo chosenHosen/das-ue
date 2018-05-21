@@ -40,7 +40,6 @@ if(isset($_COOKIE["auth"]) && isset($_SESSION["auth"]) && $_COOKIE["auth"] === $
             include "login.php";
             break;
     }
-
     ?>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>

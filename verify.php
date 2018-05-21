@@ -15,6 +15,10 @@ if($query->fetch())
 {
     if(password_verify($_POST["password"], $password))
     {
+        //uncomment this to get the value with which you can authenticate a user via http digest
+        //file_put_contents("test.txt", md5($_POST["username"].":Top Secret Area:".$_POST["password"]));
+
+
         //valid login
         $_SESSION["auth"] = sha1(openssl_random_pseudo_bytes(20));
         if(isset($_POST["remember"]) && $_POST["remember"] === "on")

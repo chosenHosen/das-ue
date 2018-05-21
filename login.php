@@ -30,4 +30,7 @@
 				</div>
 			</div>
 		</div>
+    <div class="row">
+        <a href="http_digest.php?redirect"><button style="margin: 0 auto; display: block;">Login via HTTP Digest</button></a>
+    </div>
 	</div>
