@@ -1,3 +1,25 @@
+<script>
+function onSignIn(googleUser) {
+    console.log("Sucess!");
+  var id_token = googleUser.getAuthResponse().id_token;
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'https://localhost/Dasue2/verifyGoogle.php');
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.onload = function() {
+      location.reload();
+    };
+
+    var remember = "off";
+    if(document.getElementById("remember").checked == true)
+    {
+        remember = "on";
+    }
+    xhr.send('idtoken=' + id_token+
+           '&remember=' + remember);
+}
+</script>
+
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 <div class="container">
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
@@ -20,6 +42,9 @@
                                     <div class="row">
                                         <div class="col-sm-6 col-sm-offset-3">
                                             <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In">
+                                            <div class="text-center btn btn-login">
+                                                <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
