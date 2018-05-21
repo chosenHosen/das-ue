@@ -10,7 +10,19 @@ if(empty($_SERVER['HTTPS']) || $_SERVER['HTTPS'] == "off"){
 
 if(!isset($_SESSION["logged_in"])) $_SESSION["logged_in"] = 0;
 
-if(isset($_COOKIE["auth"]) && isset($_SESSION["auth"]) && $_COOKIE["auth"] === $_SESSION["auth"]) $_SESSION["logged_in"] = 1;
+if($_SESSION["logged_in"] != 1 && isset($_COOKIE["auth"]) && isset($_COOKIE["user"]))
+{
+    require "db_connect.php";
+    $query = $conn->prepare("SELECT cookie_auth FROM users WHERE username=?");
+    $query->bind_param("s", $_COOKIE["user"]);
+    $query->execute();
+    $query->bind_result($auth);
+    if($query->fetch() && $_COOKIE["auth"] == $auth)
+    {
+        $_SESSION["user"] = $_COOKIE["user"];
+        $_SESSION["logged_in"] = 1;
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

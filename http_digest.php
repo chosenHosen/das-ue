@@ -10,6 +10,8 @@ if(!isset($_SESSION["digest_tries"]))
 }
 $_SESSION["digest_tries"]++;
 
+require "func_bcrypt.php";
+
 $nonce = bcrypt_encode(uniqid());
 $opaque = bcrypt_encode(uniqid());
 $realm = "Top Secret Area";
@@ -75,11 +77,7 @@ if(isset($_GET["redirect"]))
     header("Location: $header.php");
 }
 
-function bcrypt_encode( $password, $rounds='08' )
-{
-    $salt = substr ( str_shuffle ( './0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ' ) , 0, 22 );
-    return crypt ( $password, '$2a$' . $rounds . '$' . $salt );
-}
+
 
 function http_digest_parse($txt) {
     // gegen fehlende Daten schützen
