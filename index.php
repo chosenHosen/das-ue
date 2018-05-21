@@ -35,6 +35,7 @@ if($_SESSION["logged_in"] != 1 && isset($_COOKIE["auth"]) && isset($_COOKIE["use
     <meta name="google-signin-client_id" content="280359176332-30opuubdvu7gb7pjhq2nulkns0h5d5hd.apps.googleusercontent.com">
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
 
