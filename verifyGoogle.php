@@ -57,7 +57,7 @@ else
 
 function abort()
 {
-    $_SESSION["logged_in"] = 1;
+    $_SESSION["logged_in"] = 0;
     header('Location: index.php');
     die();
 }

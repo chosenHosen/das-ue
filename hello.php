@@ -1,6 +1,6 @@
 <?php
 include "security.php";
-include "func_bcrypt.php";
+require_once "func_bcrypt.php";
 $_SESSION["token"] = bcrypt_encode(uniqid());
 ?>
 
@@ -10,4 +10,5 @@ $_SESSION["token"] = bcrypt_encode(uniqid());
     <!-- Send token with the rest of the form data so we can validate it really is sent from our client -->
     <input type="hidden" name="csrf_token"value="<?=$_SESSION["token"]?>">
     <input type="submit" value="Logout">
+
 </form>

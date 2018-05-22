@@ -10,7 +10,7 @@ if(!isset($_SESSION["digest_tries"]))
 }
 $_SESSION["digest_tries"]++;
 
-require "func_bcrypt.php";
+require_once "func_bcrypt.php";
 
 $nonce = bcrypt_encode(uniqid());
 $opaque = bcrypt_encode(uniqid());
