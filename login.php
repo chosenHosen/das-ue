@@ -55,8 +55,8 @@ function onSignIn(googleUser) {
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <div class="row">
-                                        <a href="http_digest.php?redirect"><button style="margin: 0 auto; display: block;">Login via HTTP Digest</button></a>
+                                    <div class="row text-center">
+                                        <a href="http_digest.php?redirect">Login via HTTP Digest</a>
                                     </div>
                                 </div>
                             </form>
